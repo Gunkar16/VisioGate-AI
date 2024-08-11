@@ -43,7 +43,7 @@ while True:
         if current_class == detected_class:
             if time.time() - start_time >= 1:
                 ser.write(f'{detected_class}\n'.encode())
-                if detected_class == 'Authorized' or detected_class == 'Unauthorized':
+                if detected_class == 'Unauthorized':
                     siren_sound.play(1)
                     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
                     output_image = frame.copy()
